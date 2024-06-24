@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: otel-customizer-demo
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+    propagation:
+      type: w3c
+  observations:
+    annotations:
+      enabled: true
+
+micrometer:
+  observations:
+    annotations: true
+
+# See https://opentelemetry.io/docs/languages/java/configuration/
+# and https://opentelemetry.io/docs/zero-code/java/spring-boot-starter/sdk-configuration/
+otel:
+  exporter:
+    otlp:
+      endpoint: http://localhost:4317
+      protocol: grpc
+  logs:
+    exporter: none
+  metrics:
+    exporter: none
+  sdk:
+    disabled: false
+  traces:
+    exporter: otlp
+
+logging:
+  level:
+    root: INFO
