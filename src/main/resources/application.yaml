@@ -30,7 +30,7 @@ otel:
   sdk:
     disabled: false
   traces:
-    exporter: otlp
+    exporter: console
 
 logging:
   level:

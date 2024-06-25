@@ -11,7 +11,7 @@ public class OpenTelemetryConfiguration {
 
   // via https://opentelemetry.io/docs/zero-code/java/spring-boot-starter/sdk-configuration/#programmatic-configuration
   // When this bean is enabled, then no traces will be exported at all
-//  @Bean
+  @Bean
   public AutoConfigurationCustomizerProvider otelCustomizer() {
     return p ->
         p.addSpanProcessorCustomizer(
